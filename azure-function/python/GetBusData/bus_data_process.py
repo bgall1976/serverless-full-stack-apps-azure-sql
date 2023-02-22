@@ -9,7 +9,7 @@ def get_timestamp(timestamp: str) -> str:
     """return the timestamp in a human readable string"""
     return datetime.fromtimestamp(timestamp, timezone.utc).isoformat(sep=' ')
 
-def get_bus_data_from_feed(feed_url:str) -> list[dict[str, Any]]:
+def get_bus_data_from_feed(feed_url:str) -> str: #list[dict[str, Any]]:
     """Retrieve the raw bus data from the GTFS Real Time Feed"""
     response = requests.get(feed_url)
     response.raise_for_status() # raise exception if not 200
