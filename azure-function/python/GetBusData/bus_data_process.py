@@ -9,7 +9,7 @@ def get_timestamp(timestamp: str) -> str:
     """return the timestamp in a human readable string"""
     return datetime.fromtimestamp(timestamp, timezone.utc).isoformat(sep=' ')
 
-def get_bus_data_from_feed(feed_url:str) -> str: #list[dict[str, Any]]:
+def get_bus_data_from_feed(feed_url:str) -> str(list[dict[str, Any]]):
     """Retrieve the raw bus data from the GTFS Real Time Feed"""
     response = requests.get(feed_url)
     response.raise_for_status() # raise exception if not 200
@@ -36,7 +36,7 @@ def get_route_id(bus_data: dict) -> str:
     return bus_data["vehicle"]["trip"]["route_id"]
 
 
-def get_geo_fences(conn, payload: list[dict[str: Any]]):
+def get_geo_fences(conn, payload: str(list[dict[str: Any]])):
     """Connect to the SQL Database and execute the passed procedure"""
     with conn.cursor() as cursor:
         result={}
